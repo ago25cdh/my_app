@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+
+
+    <header>
+      <% include ../partials/header %>
+    </header>
+
+
+
+    <div class="posts">
+      <% include partials/top %>
+      <!-- -->
+      <div class="in">
+        <form class="in" action="/index/in/<%=store._id%>" method="post">
+          차량번호 : <input type="text" name="carinpost[carnum]" value="">
+          차키위치 : <input type="text" name="carinpost[keylocation]" value="">
+
+
+
+          할인적용 : <select class="saleselect" name="carinpost[sale]">
+            <% sdata.forEach(function(e){ %>
+            <option value="<%=e.sale%>"><%=e.saleinfo%> </option>
+            <% }) %>
+          </select>
+
+
+
+          <input type="submit" value="차량등록"/>
+
+        </form>
+
+      </div>
+      <!-- -->
+    </div>
+    <footer>
+    <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

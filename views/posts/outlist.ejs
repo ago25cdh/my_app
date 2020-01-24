@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <header>
+      <% include ../partials/header %>
+    </header>
+
+    <% include partials/top %>
+
+    
+
+    차량번호 : 차키위치 : 할인퍼센트 : 입차시간 : 출차시간 : 요금 :주차시간 <br/>
+    <% data.forEach(function(e){
+        if(store.feestyle=='day'){
+          var parkday = parseInt((e.carout.getTime()-e.carin.getTime())/(1000*60*60*24))
+          if(parkday<=1){
+            var finalfee = store.fee*((100-e.sale)/100)
+          }else{
+          finalfee = parkday*store.fee*((100-e.sale)/100)
+          }
+        }
+        if(store.feestyle=='hour'){
+          var parkhour = parseInt((e.carout.getTime()-e.carin.getTime())/(1000*60*60))
+          if(parkhour<=1){
+            var finalfee = store.fee*((100-e.sale)/100)
+          }else{
+          finalfee = parkhour*store.fee*((100-e.sale)/100)
+          }
+        }
+        if(store.feestyle=='minute'){
+          var parkminute = parseInt((e.carout.getTime()-e.carin.getTime())/(1000*60))
+          var finalfee = parkminute*store.fee*((100-e.sale)/100)
+        } %>
+
+      <%=e.carnum%> :
+      <%=e.keylocation%> :
+      <%=e.sale%> :
+      <%=e.carin.toLocaleString()%> :
+      <%=e.carout.toLocaleString()%> :
+      <%=finalfee%>
+
+
+    <br/>
+    <% }) %>
+
+    <footer>
+    <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

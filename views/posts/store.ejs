@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+
+    <header>
+      <% include ../partials/header %>
+    </header>
+
+    <div class="posts">
+      <% include partials/top %>
+      <!-- -->
+      <div class="index">
+
+        <ul>
+          <% data.forEach(function(e){ %>
+            <li>
+              사업소명 :
+              <a href="/index/<%=e._id%>"> <%=e.storename %></a>
+              요금 : <%=e.fee%>
+              요금 선정 단위 : <%=e.feestyle%>
+              
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+
+
+
+      <!-- -->
+    </div>
+    <footer>
+    <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

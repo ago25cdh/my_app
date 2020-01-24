@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+
+
+    <header>
+      <% include ../partials/header %>
+    </header>
+    <% include partials/top %>
+
+    <div class="users">
+
+      <div class="show">
+        <h3>user info</h3>
+        <div class="content">
+          <p class="user_info">Email<small> : <%=user.email %></small></p>
+          <p class="user_info">username<small> : <%=user.username %></small></p>
+          <a href="/users/<%=user._id%>/edit"> <button>회원정보수정</button> </a>
+          <a href="javascript:history.back()"><button>뒤로가기</button></a>
+          
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <footer>
+    <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

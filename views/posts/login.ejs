@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+
+
+    <header>
+      <% include ../partials/header %>
+    </header>
+
+    <% include partials/top %>
+
+    <!-- views/login/login.ejs -->
+
+<div class="buttons">
+  <a href="/" class="button float_left">홈 화면</a>
+  <a href="/users/new" class=" button float_right">회원 가입</a>
+</div>
+<h3>로그인</h3>
+<form class="checkValidation" action="/login" method="post">
+  <div class="inputs">
+    <div class="floats">
+      <label>Email</label>
+      <input class="cvRequired" type="text" name="email" cvRqErrMsg="Please enter your login email." cvRqErrTo="#cvRqErrEmail" value="">
+      <div id="cvRqErrEmail" class="message"></div>
+    </div>
+    <div class="floats">
+      <label>Password</label>
+      <input class="cvRequired" type="password" name="password" cvRqErrMsg="Please enter your password." cvRqErrTo="#cvRqErrPassword" value="">
+      <div id="cvRqErrPassword" class="message"></div>
+    </div>
+    <% loginError.forEach(function(e){ %>
+        <div class="message"><%= e %><div>
+    <% }) %>
+  </div>
+  <div class="buttons">
+    <input class="button" type="submit" value="로그인">
+  </div>
+</form>
+
+
+
+
+    <footer>
+    <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

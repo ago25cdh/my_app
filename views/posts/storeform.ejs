@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+
+
+    <header>
+      <% include ../partials/header %>
+    </header>
+    <% include partials/top %>
+
+    <div class="setting">
+        <form class="setting" action="/settings/storefee/<%=store._id%>" method="post">
+          사업소명 : <input type="text" name="post[storename]" value="">
+          <select class="selectfee" name="post[feestyle]">
+            <option name="" value="0">요금 선정 단위 선택</option>
+            <option name="day" value="day">1day</option>
+            <option name="hour" value="hour">1hour</option>
+            <option name="minite" value="minite">1minite</option>
+          </select>
+          요금 : <input type="number" name="post[fee]" value="">
+          <input type="submit"/>
+        </form>
+      </div>
+
+
+
+    <footer>
+    <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

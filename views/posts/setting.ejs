@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+
+
+    <header>
+      <% include ../partials/header %>
+    </header>
+
+    <% include partials/top %>
+
+
+
+    <a href="/settings/storefee/<%=store._id%>"><button type="button" name="button">사업소명과 요금</button></a>
+    <a href="/settings/addsale/<%=store._id%>"><button type="button" name="button">할인추가페이지</button></a>
+    <a href="/index/inlist/<%=store._id%>"><button type="button" name="button">총입차리스트</button></a>
+    <a href="/index/outlist/<%=store._id%>"><button type="button" name="button">총출차리스트</button></a>
+    <br/>
+    <a href="/index/<%=store._id%>"><button type="button" name="button">시작하기</button></a>
+
+
+
+
+
+
+
+
+
+    <footer>
+    <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

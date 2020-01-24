@@ -1,0 +1,48 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <% include ../partials/head %>
+    </head>
+    <body>
+      <header>
+        <% include ../partials/header %>
+      </header>
+      <div class="index">
+        <% if(user){ %>
+          <a href="/logout" class="float_right"><button>로그아웃</button></a>
+          <a href="/users/<%=user._id%>" class="float_right"><button>사용자:<%=user.username%></button></a>
+        <% }else{ %>
+          <a href="/login" class="float_right"><button>로그인</button></a>
+          <a href="/users/new" class="float_right"><button>회원가입</button></a>
+        <% } %>
+      </div>
+
+      <div class="today">
+        <% var today = new Date() %>
+        <%=today.toLocaleString()%>
+      </div>
+
+      <div class="store">
+        스토어명 : <%=store.storename%> <br/>
+        요금스타일 : <%=store.feestyle%> <br/>
+        요금 : <%=store.fee%>
+
+      </div>
+
+
+      <div class="posts">
+        <% include partials/top %>
+        <!-- -->
+
+        <a href="/index/in/<%=store._id%>"><button type="button" name="indexofin">입차등록</button></a>
+        <a href="/index/out/<%=store._id%>"><button type="button" name="indexofout">출차등록</button></a>
+        <br/>
+        <a href="/settings/page/<%=store._id%>"><button type="button" name="gotosetting">관리자페이지</a>
+
+        <!-- -->
+      </div>
+      <footer>
+      <% include ../partials/footer %>
+      </footer>
+    </body>
+  </html>

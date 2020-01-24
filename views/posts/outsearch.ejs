@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+
+
+    <header>
+      <% include ../partials/header %>
+    </header>
+
+    <% include partials/top %>
+
+    <div class="search">
+      <form action="/index/out" method="post" id="searchAction" name="searchAction">
+        <input type="text" class="search_carnum" id="searchCarNum" name="searchCarNum">
+        <a href="#" onclick="searchCarNum();"><div class="search_btn">검색</div></a>
+      </form>
+
+    </div>
+
+
+
+    <footer>
+    <% include ../partials/footer %>
+    </footer>
+
+<script type="text/javascript">
+
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+
+
+    <header>
+      <% include ../partials/header %>
+    </header>
+
+    <% include partials/top %>
+
+    <form action="/index/out/<%=store._id%>" method="post">
+      <input type="text" name="caroutpost[carnum]" value="">
+      <input type="submit" value="검색">
+    </form>
+
+
+
+    <footer>
+    <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

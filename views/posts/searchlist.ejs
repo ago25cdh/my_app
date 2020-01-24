@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+
+
+    <header>
+      <% include ../partials/header %>
+    </header>
+
+    <% include partials/top %>
+
+
+            차량번호 : 차키위치 : 할인퍼센트 : 입차시간 : 출차시간 <br/>
+            <% data.forEach(function(e){ %>
+
+              <%=e.carnum%>  :
+              <%=e.keylocation%>  :
+              <%=e.sale%> :
+              <%=e.carin.toLocaleString()%> :
+              <%=e.carout%>
+
+              <form action="/index/out/<%=store._id%>/<%=e._id%>?method=post" method="post">
+                <button name="outbtn">출차</button>
+              </form>
+
+
+            <br/>
+            <% }) %>
+
+
+
+
+
+    <footer>
+    <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

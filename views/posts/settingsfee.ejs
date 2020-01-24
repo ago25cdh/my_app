@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+
+    <header>
+      <% include ../partials/header %>
+    </header>
+
+    <div class="posts">
+      <% include partials/top %>
+      <!-- -->
+      <div class="index">
+
+
+      </div>
+
+      <div class="salesetting">
+        <form class="salesetting" action="/settings/addsale/<%=store._id%>" method="post">
+          할인코드 : <input type="text" name="salepost[salecode]" value="">
+          할인정보 : <input type="text" name="salepost[saleinfo]" value="">
+          할인퍼센트 : <input type="number" name="salepost[sale]" value="">
+          <input type="submit"/>
+        </form>
+          <% sdata.forEach(function(e){ %>
+            <%=e.salecode %> :
+            <%=e.saleinfo %> :
+            <%=e.sale %> <br/>
+          <% }) %>
+      </div>
+      <div class="buttons">
+        <button onclick="history.back()">Back</button>
+      </div>
+
+      <!-- -->
+    </div>
+    <footer>
+    <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>
